@@ -17,7 +17,7 @@ class Autocomplete extends Component {
 
     const filteredSuggestions = suggestions.filter(
       suggestion =>
-        suggestion.toLowerCase().indexOf(userInput.toLowerCase()) > -1
+        suggestion.login.toLowerCase().indexOf(userInput.toLowerCase()) > -1
     );
 
     this.setState({
@@ -44,7 +44,7 @@ class Autocomplete extends Component {
       this.setState({
         activeSuggestion: 0,
         showSuggestions: false,
-        userInput: filteredSuggestions[activeSuggestion]
+        userInput: filteredSuggestions[activeSuggestion].login
       });
     } else if (e.keyCode === 38) {
       if (activeSuggestion === 0) {
@@ -86,8 +86,8 @@ class Autocomplete extends Component {
                 className = "suggestion-active";
               }
               return (
-                <li className={className} key={suggestion} onClick={onClick}>
-                  {suggestion}
+                <li className={className} key={suggestion.login} onClick={onClick}>
+                  <img src={suggestion.avatar_url} class="avatar"></img>{suggestion.login}
                 </li>
               );
             })}

@@ -24,6 +24,14 @@ input {
     padding: 0.5rem;
 }
 
+.avatar {
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .suggestion-active,
 .suggestions li:hover {
     background-color: darkgrey;
