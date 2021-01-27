@@ -87,7 +87,7 @@ class Autocomplete extends Component {
               }
               return (
                 <li className={className} key={suggestion.login} onClick={onClick}>
-                  <img src={suggestion.avatar_url} class="avatar"></img>{suggestion.login}
+                  <img src={suggestion.avatar_url} class="avatar" alt="avatar.png"></img>{suggestion.login}
                 </li>
               );
             })}

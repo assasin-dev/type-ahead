@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Autocomplete from "./Autocomplete";
 import useSWR from 'swr';
 
 function App() {
   const fetcher = (url) => fetch(url).then(res => res.json())
-  const { data, error } = useSWR('https://api.github.com/users', fetcher)
+  const { data } = useSWR('https://api.github.com/users', fetcher)
 
   return (
     <div className="App">
